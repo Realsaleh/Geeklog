@@ -1,0 +1,10 @@
+<ul class="submenu">
+    {% for cat in cat.child.active %}
+        <li class="has-submenu">
+            <a href="{% url 'blog:category' cat.slug %}">{{cat.title}}</a> {% if cat.child.active %} <span class="submenu-arrow"></span> {% endif %}
+            {% if cat.child.active %}
+                {% include 'blog/partials/category_loop.html' %}
+            {% endif %} 
+        </li>
+    {% endfor %}
+</ul>

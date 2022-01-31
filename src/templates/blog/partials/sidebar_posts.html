@@ -1,0 +1,11 @@
+<div class="widget mb-4 pb-2">
+    <h4 class="widget-title">{{title}}</h4>
+    <div class="mt-4">
+    {% for p in posts %}
+        <div class="clearfix post-recent">
+            <div class="post-recent-thumb float-left"> <a href="{% url 'blog:detail' p.slug %}"> <img alt="img" src="{{p.thumbnail.url}}" class="img-fluid rounded"></a></div>
+            <div class="post-recent-content float-left"><a href="{% url 'blog:detail' p.slug %}">{{p.title}}</a><span class="text-muted mt-2">{{p.jpublish}}</span></div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

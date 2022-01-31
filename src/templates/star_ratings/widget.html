@@ -1,0 +1,6 @@
+{% extends "star_ratings/widget_base.html" %}
+{% block rating_detail %}
+    {% if not user.authenticated %}
+        <div>برای امتیاز دادن به این پست باید وارد اکانت خود شوید</div>
+    {% endif %}
+{% endblock %}
